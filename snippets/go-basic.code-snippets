@@ -386,5 +386,18 @@
 		,
 		"description": "Mutex snippet in Golang."
 	},
+	"Go Http Server Hello World": {
+		"scope": "go",
+		"prefix": "go: server-hello",
+		"body": [
+			"func helloWorld(w http.ResponseWriter, req *http.Request) {",
+			"\tfmt.Fprintf(w, \"hello\n\")",
+			"}",
+			"",
+			"http.HandleFunc(\"/hello\", helloWorld)",
+			"http.ListenAndServe(\":8090\", nil)",
+		],
+		"description": "Go Server Hello World."
+	},
     
 }
