@@ -105,3 +105,6 @@ dist
 
 # Packaging script
 package.sh
+
+# Packaged snippet
+snp-go-basic-*
