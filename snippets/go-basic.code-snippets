@@ -399,5 +399,15 @@
 		],
 		"description": "Go Server Hello World."
 	},
+	"Go Http Server Set Header": {
+		"scope": "go",
+		"prefix": "go: server-set-header",
+		"body": [
+			"//res is http.ResponseWriter",
+			"header := res.Header()",
+			"header.Set(\"${1:Content-Type}\",\"${2:application/json}\")",
+		],
+		"description": "Go Server Set Header."
+	},
     
 }

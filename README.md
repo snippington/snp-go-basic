@@ -33,4 +33,6 @@ VSCode extension for basic Golang snippets.
 | `go: waitgroup` | Waitgroup |
 | `go: waitgroup-snippet` | Waitgroup implementation snippet |
 | `go: mutex-snippet` | Mutex implementation snippet |
+| `go: server-hello` | Http Server Hello World |
+| `go: server-set-header` | Http Server Set Header |
 
