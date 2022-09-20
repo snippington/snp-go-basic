@@ -409,5 +409,13 @@
 		],
 		"description": "Go Server Set Header."
 	},
+	"Go Test": {
+		"scope": "go",
+		"prefix": "go: unit-test",
+		"body": [
+			"func TestFunc(t *testing.T) {}",
+		],
+		"description": "Go Unit Test."
+	},
     
 }

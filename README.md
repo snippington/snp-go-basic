@@ -35,4 +35,5 @@ VSCode extension for basic Golang snippets.
 | `go: mutex-snippet` | Mutex implementation snippet |
 | `go: server-hello` | Http Server Hello World |
 | `go: server-set-header` | Http Server Set Header |
+| `go: unit-test` | Unit Test |
 
