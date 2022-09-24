@@ -1,7 +1,7 @@
 # Snippington Golang Basic
 VSCode extension for basic Golang snippets.
 
-## 30+ Snippets
+## 30+ Snippets and more coming soon.
 
 *Most* of the snippets are based on *[gobyexample.com](https://gobyexample.com/)*.
 
