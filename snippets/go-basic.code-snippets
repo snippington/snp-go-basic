@@ -429,6 +429,24 @@
 		],
 		"description": "Read query string value."
 	},
+	"Go Http Server Return JSON": {
+		"scope": "go",
+		"prefix": "go: server-return-json",
+		"body": [
+			"//Place this in your handler function.",
+			"w.WriteHeader(http.StatusCreated)",
+			"w.Header().Set(\"Content-Type\", \"application/json\")",
+			"sampleResponse := make(map[string]string)",
+			"sampleResponse[\"info\"] = \"Hola Mundo!\"",
+			"jsonResp, err := json.Marshal(sampleResponse)",
+			"if err != nil {",
+			"\tlog.Fatalf(\"Something broke. Err: %s\", err)",
+			"}",
+			"w.Write(jsonResp)",
+			"return",
+		],
+		"description": "Return JSON on Http Server."
+	},
 	"Go Test": {
 		"scope": "go",
 		"prefix": "go: unit-test",
