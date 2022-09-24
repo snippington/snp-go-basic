@@ -1,6 +1,8 @@
 # Snippington Golang Basic
 VSCode extension for basic Golang snippets.
 
+## 30+ Snippets
+
 *Most* of the snippets are based on *[gobyexample.com](https://gobyexample.com/)*.
 
 #### Shortcuts
@@ -35,5 +37,8 @@ VSCode extension for basic Golang snippets.
 | `go: mutex-snippet` | Mutex implementation snippet |
 | `go: server-hello` | Http Server Hello World |
 | `go: server-set-header` | Http Server Set Header |
+| `go: server-form-post-value` | Http Server Get Form Post Value |
+| `go: server-query-string` | Http Server Get Query String Value |
+| `go: server-return-json` | Http Server return JSON snippet |
 | `go: unit-test` | Unit Test |
 
