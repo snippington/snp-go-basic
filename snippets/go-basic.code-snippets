@@ -390,8 +390,8 @@
 		"scope": "go",
 		"prefix": "go: server-hello",
 		"body": [
-			"func helloWorld(w http.ResponseWriter, req *http.Request) {",
-			"\tfmt.Fprintf(w, \"hello\n\")",
+			"func helloWorld(w http.ResponseWriter, r *http.Request) {",
+			"\tfmt.Fprintf(w, \"hello\")",
 			"}",
 			"",
 			"http.HandleFunc(\"/hello\", helloWorld)",
@@ -403,9 +403,8 @@
 		"scope": "go",
 		"prefix": "go: server-set-header",
 		"body": [
-			"//res is http.ResponseWriter",
-			"header := res.Header()",
-			"header.Set(\"${1:Content-Type}\",\"${2:application/json}\")",
+			"//w is http.ResponseWriter",
+			"w.Header().Set(\"${1:Content-Type}\",\"${2:application/json}\")",
 		],
 		"description": "Go Server Set Header."
 	},
