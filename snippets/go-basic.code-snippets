@@ -408,6 +408,27 @@
 		],
 		"description": "Go Server Set Header."
 	},
+	"Go Http Server Read Form POST Value": {
+		"scope": "go",
+		"prefix": "go: server-form-post-value",
+		"body": [
+			"//r is *http.Request",
+			"sampleVal := r.PostFormValue(\"sampleFormField\")",
+			"if sampleVal == \"\" {",
+			"\tsampleVal = \"somethingElse\"",
+			"}",
+		],
+		"description": "Read value from Http Server form POST."
+	},
+	"Go Http Server Query String": {
+		"scope": "go",
+		"prefix": "go: server-query-string",
+		"body": [
+			"//r is *http.Request",
+			"sampleValue := r.URL.Query().Get(\"sample\")",
+		],
+		"description": "Read query string value."
+	},
 	"Go Test": {
 		"scope": "go",
 		"prefix": "go: unit-test",
