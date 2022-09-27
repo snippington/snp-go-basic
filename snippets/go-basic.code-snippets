@@ -447,6 +447,20 @@
 		],
 		"description": "Return JSON on Http Server."
 	},
+	"Go Server Serve Image": {
+		"scope": "go",
+		"prefix": "go: server-serve-image",
+		"body": [
+			"\tbuf, err := ioutil.ReadFile(\"sid.png\")",
+			"",
+			"\tif err != nil {",
+			"\t\tlog.Fatal(err)",
+			"\t}",
+			"\tw.Header().Set(\"Content-Type\", \"image/png\")",
+			"\tw.Write(buf)",
+		],
+		"description": "Go serve image with Http server."
+	},
 	"Go Test": {
 		"scope": "go",
 		"prefix": "go: unit-test",
@@ -454,6 +468,15 @@
 			"func TestFunc(t *testing.T) {}",
 		],
 		"description": "Go Unit Test."
+	},
+	"Go Command Line Args": {
+		"scope": "go",
+		"prefix": "go: cli-args",
+		"body": [
+			"argsWithProg := os.Args",
+			"argsWithoutProg := os.Args[1:]"
+		],
+		"description": "Go Command Line Arguments."
 	},
     
 }
