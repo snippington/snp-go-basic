@@ -478,5 +478,15 @@
 		],
 		"description": "Go Command Line Arguments."
 	},
-    
+	"Go Interface": {
+		"scope": "go",
+		"prefix": "go: interface",
+		"body": [
+			"type ${1:Shape} interface {",
+			"\t${2:Area}() float64",
+			"\t${3:Perimeter}() float64",
+			"}",
+		],
+		"description": "Golang interface."
+	},
 }
