@@ -167,6 +167,16 @@
 		],
 		"description": "Embedded Struct in Golang."
 	},
+	"Go Struct Method": {
+		"scope": "go",
+		"prefix": "go: struct-method",
+		"body": [
+			"func (s ${1:SampleStruct}) ${2:SampleMethod() string {",
+			"\treturn fmt.Sprintf(\"Sample val was %s\", s.SampleProperty)",
+			"}",
+		],
+		"description": "Method for a struct on Golang."
+	},
     "Go Error": {
 		"scope": "go",
 		"prefix": "go: error",
