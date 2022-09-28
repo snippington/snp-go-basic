@@ -24,6 +24,7 @@ VSCode extension for basic Golang snippets.
 | `go: pointer` | Pointer |
 | `go: struct` | Struct |
 | `go: struct-embedded` | Embedded struct |
+| `go: struct-method` | Method for a struct |
 | `go: error` | Raise error |
 | `go: routine-anon` | Routine anonymous |
 | `go: routine-basic` | Routine basic |
@@ -40,5 +41,8 @@ VSCode extension for basic Golang snippets.
 | `go: server-form-post-value` | Http Server Get Form Post Value |
 | `go: server-query-string` | Http Server Get Query String Value |
 | `go: server-return-json` | Http Server return JSON snippet |
+| `go: server-serve-image` | Http Server serve an image |
 | `go: unit-test` | Unit Test |
+| `go: cli-args` | Read Command Line Args |
+| `go: interface` | Define interface |
 
