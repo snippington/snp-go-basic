@@ -499,4 +499,12 @@
 		],
 		"description": "Golang interface."
 	},
+	"Go Server Serve Static File": {
+		"scope": "go",
+		"prefix": "go: server-serve-static",
+		"body": [
+			"http.Handle(\"/\", http.FileServer(http.Dir(\"./static\")))",
+		],
+		"description": "Go serve static files with Http server."
+	},
 }
