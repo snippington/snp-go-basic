@@ -45,4 +45,5 @@ VSCode extension for basic Golang snippets.
 | `go: unit-test` | Unit Test |
 | `go: cli-args` | Read Command Line Args |
 | `go: interface` | Define interface |
+| `go: file-write` | Write to file |
 

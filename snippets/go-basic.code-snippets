@@ -507,4 +507,16 @@
 		],
 		"description": "Go serve static files with Http server."
 	},
+	"Go Write to File": {
+		"scope": "go",
+		"prefix": "go: file-write",
+		"body": [
+			"err = ioutil.WriteFile(\"${1:sampleFile.txt}\", ${2:sampleContent}, 0644)",
+			"if err != nil {",
+			"\tfmt.Println(err)",
+			"\treturn",
+			"}",
+		],
+		"description": "Go write to file."
+	},
 }
