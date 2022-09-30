@@ -46,4 +46,5 @@ VSCode extension for basic Golang snippets.
 | `go: cli-args` | Read Command Line Args |
 | `go: interface` | Define interface |
 | `go: file-write` | Write to file |
+| `go: write-to-log` | Write to log file |
 
