@@ -519,4 +519,18 @@
 		],
 		"description": "Go write to file."
 	},
+	"Go Write to Log": {
+		"scope": "go",
+		"prefix": "go: write-to-log",
+		"body": [
+			"\tf, err := os.OpenFile(\"${:sampleLogFile}\", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)",
+			"\tif err != nil {",
+			"\t\tlog.Fatalf(\"File open error: %v\", err)",
+			"\t}",
+			"\tdefer f.Close()",
+			"\tlog.SetOutput(f)",
+			"\tlog.Println(\"Something got logged here.\")",
+		],
+		"description": "Go write to log file."
+	},
 }
