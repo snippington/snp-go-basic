@@ -47,4 +47,6 @@ VSCode extension for basic Golang snippets.
 | `go: interface` | Define interface |
 | `go: file-write` | Write to file |
 | `go: write-to-log` | Write to log file |
+| `go: env-get` | Get environment variable |
+| `go: env-set` | Set environment variable |
 

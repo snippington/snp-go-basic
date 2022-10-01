@@ -533,4 +533,20 @@
 		],
 		"description": "Go write to log file."
 	},
+	"Go Get Environment Variable": {
+		"scope": "go",
+		"prefix": "go: env-get",
+		"body": [
+			"\tval := os.Getenv(${1:VariableName})",
+		],
+		"description": "Get environment variable by name."
+	},
+	"Go Set Environment Variable": {
+		"scope": "go",
+		"prefix": "go: env-set",
+		"body": [
+			"\tval := os.Setenv(${1:VariableName}, \"${2:VariableValue}\")",
+		],
+		"description": "Set environment variable."
+	},
 }
