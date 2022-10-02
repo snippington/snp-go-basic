@@ -400,11 +400,17 @@
 		"scope": "go",
 		"prefix": "go: server-hello",
 		"body": [
+			"package main\n",
+            "import (",
+            "\t\"fmt\"",
+            ")\n",
 			"func helloWorld(w http.ResponseWriter, r *http.Request){",
 			"\tfmt.Fprintf(w, \"hello\")",
 			"}\n",
+			"func main(){",
 			"http.HandleFunc(\"/hello\", helloWorld)",
 			"http.ListenAndServe(\":8090\", nil)",
+			"}",
 		],
 		"description": "Go Server Hello World."
 	},
