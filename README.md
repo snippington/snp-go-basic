@@ -42,6 +42,7 @@ VSCode extension for basic Golang snippets.
 | `go: server-query-string` | Http Server Get Query String Value |
 | `go: server-return-json` | Http Server return JSON snippet |
 | `go: server-serve-image` | Http Server serve an image |
+| `go: server-middleware` | Http Server Middleware |
 | `go: unit-test` | Unit Test |
 | `go: cli-args` | Read Command Line Args |
 | `go: interface` | Define interface |
