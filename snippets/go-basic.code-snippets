@@ -400,10 +400,9 @@
 		"scope": "go",
 		"prefix": "go: server-hello",
 		"body": [
-			"func helloWorld(w http.ResponseWriter, r *http.Request) {",
+			"func helloWorld(w http.ResponseWriter, r *http.Request){",
 			"\tfmt.Fprintf(w, \"hello\")",
-			"}",
-			"",
+			"}\n",
 			"http.HandleFunc(\"/hello\", helloWorld)",
 			"http.ListenAndServe(\":8090\", nil)",
 		],
