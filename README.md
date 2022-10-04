@@ -1,5 +1,5 @@
 # Snippington Golang Basic
-VSCode extension for basic Golang snippets.
+This VSCode extension is a curation of useful Golang snippets.
 
 ## 30+ Snippets and more coming soon.
 
@@ -50,4 +50,5 @@ VSCode extension for basic Golang snippets.
 | `go: write-to-log` | Write to log file |
 | `go: env-get` | Get environment variable |
 | `go: env-set` | Set environment variable |
+| `go: server-file-upload` | Http Server File Upload Handler |
 

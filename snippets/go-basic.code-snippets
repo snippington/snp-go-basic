@@ -567,4 +567,41 @@
 		],
 		"description": "Http Middleware"
 	},
+	"Go Http File Upload Handler": {
+		"scope": "go",
+		"prefix": "go: server-file-upload",
+		"body": [
+			"//http.HandleFunc(\"/upload\", fileUploadHandler)",
+			"func fileUploadHandler(w http.ResponseWriter, r *http.Request) {",
+			"\t// Maximum upload of 10 MB files",
+			"\tr.ParseMultipartForm(10 \u003c\u003c 20)",
+			"",
+			"\t// Get handler for filename, size and headers",
+			"\tfile, handler, err := r.FormFile(\"${2:formKey}\")",
+			"\tif err != nil {",
+			"\t\tfmt.Println(\"Error Retrieving the File\")",
+			"\t\tfmt.Println(err)",
+			"\t\treturn",
+			"\t}",
+			"",
+			"\tdefer file.Close()",
+			"",
+			"\t// Create file",
+			"\tdst, err := os.Create(handler.Filename)",
+			"\tdefer dst.Close()",
+			"\tif err != nil {",
+			"\t\thttp.Error(w, err.Error(), http.StatusInternalServerError)",
+			"\t\treturn",
+			"\t}",
+			"",
+			"\t// Copy uploaded file to the created file",
+			"\tif _, err := io.Copy(dst, file); err != nil {",
+			"\t\thttp.Error(w, err.Error(), http.StatusInternalServerError)",
+			"\t\treturn",
+			"\t}",
+			"}",
+			""
+		],
+		"description": "File Upload handler for HTTP Server"
+	}
 }
