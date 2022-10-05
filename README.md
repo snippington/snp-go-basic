@@ -51,4 +51,5 @@ This VSCode extension is a curation of useful Golang snippets.
 | `go: env-get` | Get environment variable |
 | `go: env-set` | Set environment variable |
 | `go: server-file-upload` | Http Server File Upload Handler |
+| `go: server-logging-middleware` | Server middleware for logging |
 

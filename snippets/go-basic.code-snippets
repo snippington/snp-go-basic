@@ -603,5 +603,19 @@
 			""
 		],
 		"description": "File Upload handler for HTTP Server"
-	}
+	},
+	"Go Server Logging Middleware": {
+		"scope": "go",
+		"prefix": "go: server-logging-middleware",
+		"body": [
+			"//Wrap using: http.HandleFunc(\"/foo\", logging(foo))",
+			"func logging(f http.HandlerFunc) http.HandlerFunc {",
+			"\treturn func(w http.ResponseWriter, r *http.Request) {",
+			"\t\tlog.Println(r.URL.Path)",
+			"\t\tf(w, r)",
+			"\t}",
+			"}"
+		],
+		"description": "Middleware for logging for Http Server"
+	},
 }
