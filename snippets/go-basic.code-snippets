@@ -1,47 +1,43 @@
-// Name: Golang basic snippets.
-// Desc: Based on examples from gobyexample.com
-// Source Name: Go By Example
-// Source Url: https://gobyexample.com/
 {
-    "Go Hello": {
-        "scope": "go",
-        "prefix": "go: hello",
-        "body": [
-            "package main\n",
-            "import (",
-            "\t\"fmt\"",
-            ")\n",
-            "func main(){",
-            "\tfmt.Println(\"Hello ${1:World}!!!\")",
-            "}",
-        ],
-        "description": "Hello World in Golang."
-    },
-    "Go Variable": {
-        "scope": "go",
-        "prefix": "go: var",
-        "body": [
-            "var $1 string = \"$2\"",
-        ],
-        "description": "Declare a variable in Golang."
-    },
-    "Go Short Variable": {
-        "scope": "go",
-        "prefix": "go: short-var",
-        "body": [
-            "$1 := \"$2\"",
-        ],
-        "description": "Declare a variable using shorthand in Golang."
-    },
-    "Go Constant": {
-        "scope": "go",
-        "prefix": "go: const",
-        "body": [
-            "const $1 string = \"$2\"",
-        ],
-        "description": "Declare a constant in Golang."
-    },
-    "Go Condition": {
+	"Go Hello": {
+		"scope": "go",
+		"prefix": "go: hello",
+		"body": [
+			"package main\n",
+			"import (",
+			"\t\"fmt\"",
+			")\n",
+			"func main(){",
+			"\tfmt.Println(\"Hello ${1:World}!!!\")",
+			"}"
+		],
+		"description": "Hello World in Golang."
+	},
+	"Go Variable": {
+		"scope": "go",
+		"prefix": "go: var",
+		"body": [
+			"var $1 string = \"$2\""
+		],
+		"description": "Declare a variable in Golang."
+	},
+	"Go Short Variable": {
+		"scope": "go",
+		"prefix": "go: short-var",
+		"body": [
+			"$1 := \"$2\""
+		],
+		"description": "Declare a variable using shorthand in Golang."
+	},
+	"Go Constant": {
+		"scope": "go",
+		"prefix": "go: const",
+		"body": [
+			"const $1 string = \"$2\""
+		],
+		"description": "Declare a constant in Golang."
+	},
+	"Go Condition": {
 		"scope": "go",
 		"prefix": "go: switch",
 		"body": [
@@ -80,7 +76,7 @@
 		],
 		"description": "Declare a map in Golang."
 	},
-    "Go Range": {
+	"Go Range": {
 		"scope": "go",
 		"prefix": "go: range",
 		"body": [
@@ -90,12 +86,12 @@
 		],
 		"description": "A range in Golang."
 	},
-    "Go Func Multiple": {
+	"Go Func Multiple": {
 		"scope": "go",
 		"prefix": "go: func-mult",
 		"body": [
 			"func returnMultipleVals() (${1:string}, ${2:string}) {",
-			"\treturn ${3:\"abc\"}, ${4:\"xyz\"}",	
+			"\treturn ${3:\"abc\"}, ${4:\"xyz\"}",
 			"}"
 		],
 		"description": "Function to return multiple values in Golang."
@@ -106,9 +102,9 @@
 		"body": [
 			"func variadicFunction(${1:vals} ...${2:int}) {",
 			"\tfor _, item := range $1 {",
-			"\t\tfmt.Println(item)",	
+			"\t\tfmt.Println(item)",
 			"\t}",
-			"}",
+			"}"
 		],
 		"description": "Variadic function in Golang."
 	},
@@ -122,22 +118,21 @@
 			"}\n",
 			"func calledFunc(iptr *${3:int}){",
 			"\t\/\/Pointer dereferenced and value assigned below.",
-			"\t*iptr = ${4:0}",	
-			"}",
+			"\t*iptr = ${4:0}",
+			"}"
 		],
 		"description": "Pointers in Golang."
 	},
-    "Go Struct": {
+	"Go Struct": {
 		"scope": "go",
 		"prefix": "go: struct",
-		"body":
-		[
-			"type person struct {", 
-			"\tname string", 
-			"\tage  int", 
-			"}\n", 
-			"func createStruct() {", 
-			"\ts := person{name: \"Sean\", age: 50}\n", 
+		"body": [
+			"type person struct {",
+			"\tname string",
+			"\tage  int",
+			"}\n",
+			"func createStruct() {",
+			"\ts := person{name: \"Sean\", age: 50}\n",
 			"\tfmt.Println(\"Details: \",s.name)",
 			"}"
 		],
@@ -146,14 +141,13 @@
 	"Go Struct Embedded": {
 		"scope": "go",
 		"prefix": "go: struct-embedded",
-		"body":
-		[
-			"type ${1:base} struct {", 
-			"\tsampleValX int", 
+		"body": [
+			"type ${1:base} struct {",
+			"\tsampleValX int",
 			"}\n",
 			"type ${2:container} struct {",
-			"\t$1", 
-			"\tsampleValY string", 
+			"\t$1",
+			"\tsampleValY string",
 			"}",
 			"func sampleCall(){",
 			"\tc := $2{",
@@ -173,40 +167,37 @@
 		"body": [
 			"func (s ${1:SampleStruct}) ${2:SampleMethod() string {",
 			"\treturn fmt.Sprintf(\"Sample val was %s\", s.SampleProperty)",
-			"}",
+			"}"
 		],
 		"description": "Method for a struct on Golang."
 	},
-    "Go Error": {
+	"Go Error": {
 		"scope": "go",
 		"prefix": "go: error",
-		"body": 
-		[
-			"var someCondition bool = false", 
-			"if (someCondition){",  
-			"\terrors.New(\"Something broke.\")", 
+		"body": [
+			"var someCondition bool = false",
+			"if (someCondition){",
+			"\terrors.New(\"Something broke.\")",
 			"}"
 		],
 		"description": "Error in Golang."
 	},
-    "Go Routine Anonymous": {
+	"Go Routine Anonymous": {
 		"scope": "go",
 		"prefix": "go: routine-anon",
-		"body": 
-		[
-			"go func(msg string) {", 
-			"\tfmt.Println(msg)",  
-			"}(\"sample msg\")", 
+		"body": [
+			"go func(msg string) {",
+			"\tfmt.Println(msg)",
+			"}(\"sample msg\")"
 		],
 		"description": "Go routine with anonymouse func in Golang."
 	},
 	"Go Routine": {
 		"scope": "go",
 		"prefix": "go: routine-basic",
-		"body": 
-		[
-			"func sampleFunc(msg string){", 
-			"\tfmt.Println(msg)",  
+		"body": [
+			"func sampleFunc(msg string){",
+			"\tfmt.Println(msg)",
 			"}\n",
 			"func callerFunc(){",
 			"\tgo sampleFunc(\"sample msg\")",
@@ -217,17 +208,16 @@
 	"Go Channel": {
 		"scope": "go",
 		"prefix": "go: channel",
-		"body":
-		[
-			"\/\/Creating a channel.", 
-			"ch := make(chan string)\n", 
+		"body": [
+			"\/\/Creating a channel.",
+			"ch := make(chan string)\n",
 			"\/\/Blocking send to channel.",
 			"go func() { ",
 			"\tch <- \"ping\" ",
-			"}()\n", 
+			"}()\n",
 			"\/\/Blocking read from channel.",
-			"msg := <-ch", 
-			"fmt.Println(msg)", 
+			"msg := <-ch",
+			"fmt.Println(msg)",
 			""
 		],
 		"description": "Channel in Golang."
@@ -277,8 +267,7 @@
 	"Go Channels Range": {
 		"scope": "go",
 		"prefix": "go: channels-range",
-		"body": 
-		[
+		"body": [
 			"${1:ch} := make(chan string, 2)",
 			"$1 <- \"first_msg\"",
 			"$1 <- \"second_msg\"",
@@ -292,36 +281,35 @@
 	"Go Worker Pools": {
 		"scope": "go",
 		"prefix": "go: worker-pools",
-		"body": 
-		[
-			"func worker(id int, jobs <-chan int, results chan<- int) {", 
+		"body": [
+			"func worker(id int, jobs <-chan int, results chan<- int) {",
 			"\t\/\/Run concurrent worker instances.",
 			"\t\/\/Receive work on the jobs channel.",
 			"\t\/\/Send corresponding results to resulting channel.",
-			"\tfor j := range jobs {", 
-			"\t\tfmt.Println(\"worker\", id, \"started  job\", j)", 
-			"\t\ttime.Sleep(time.Second)", 
-			"\t\tfmt.Println(\"worker\", id, \"finished job\", j)", 
-			"\t\tresults <- j * 2", 
-			"\t}", 
+			"\tfor j := range jobs {",
+			"\t\tfmt.Println(\"worker\", id, \"started  job\", j)",
+			"\t\ttime.Sleep(time.Second)",
+			"\t\tfmt.Println(\"worker\", id, \"finished job\", j)",
+			"\t\tresults <- j * 2",
+			"\t}",
 			"}\n",
 			"func callerFunc(){",
-			"\tconst numJobs = 5\n", 
+			"\tconst numJobs = 5\n",
 			"\t\/\/Create channel to create jobs and track results.",
-			"\tjobs := make(chan int, numJobs)", 
-			"\tresults := make(chan int, numJobs)\n", 
+			"\tjobs := make(chan int, numJobs)",
+			"\tresults := make(chan int, numJobs)\n",
 			"\t\/\/Initiate workers.",
-			"\tfor w := 1; w <= 3; w++ {", 
-			"\t\tgo worker(w, jobs, results)", 
+			"\tfor w := 1; w <= 3; w++ {",
+			"\t\tgo worker(w, jobs, results)",
 			"\t}\n",
 			"\t\/\/Send jobs to the channel.",
-			"\tfor j := 1; j <= numJobs; j++ {", 
-			"\t\tjobs <- j", 
-			"\t}", 
-			"\tclose(jobs)\n", 
+			"\tfor j := 1; j <= numJobs; j++ {",
+			"\t\tjobs <- j",
+			"\t}",
+			"\tclose(jobs)\n",
 			"\t\/\/Collect results from jobs.",
-			"\tfor a := 1; a <= numJobs; a++ {", 
-			"\t\t<-results", 
+			"\tfor a := 1; a <= numJobs; a++ {",
+			"\t\t<-results",
 			"\t}",
 			"}"
 		],
@@ -331,21 +319,20 @@
 		"scope": "go",
 		"prefix": "go: waitgroup",
 		"body": [
-			"var ${1:wg} sync.WaitGroup",
+			"var ${1:wg} sync.WaitGroup"
 		],
 		"description": ""
 	},
 	"Go WaitGroup Snippet": {
 		"scope": "go",
 		"prefix": "go: waitgroup-snippet",
-		"body": 
-		[
-			"func worker(id int){", 
-			"\tfmt.Printf(\"Worker %d starting\", id)",  
+		"body": [
+			"func worker(id int){",
+			"\tfmt.Printf(\"Worker %d starting\", id)",
 			"\ttime.Sleep(time.Second)",
 			"\tfmt.Printf(\"Worker %d done\", id)",
-			"}\n", 
-			"func callerFunc (){", 
+			"}\n",
+			"func callerFunc (){",
 			"\t\/\/Create WaitGroup to wait on",
 			"\t\/\/all goroutines to finish.",
 			"\tvar wg sync.WaitGroup\n",
@@ -374,26 +361,25 @@
 	"Go Mutex": {
 		"scope": "go",
 		"prefix": "go: mutex-snippet",
-		"body": 
-		[
-			"var x  = 0\n", 
-			"func sampleAction(wg *sync.WaitGroup, m *sync.Mutex) {", 
-			"\tm.Lock()", 
-			"\tx = x + 1", 
-			"\tm.Unlock()", 
-			"\twg.Done()", 
-			"}\n", 
-			"func callerFunc() {", 
-			"\tvar w sync.WaitGroup", 
-			"\tvar m sync.Mutex", 
-			"\tfor i := 0; i < 10; i++ {", 
-			"\t\tw.Add(1)", 
-			"\t\tgo sampleAction(&w, &m)", 
-			"\t}", 
-			"\tw.Wait()", 
-			"\tfmt.Println(\"value of x\", x)", 
-			"}"]
-		,
+		"body": [
+			"var x  = 0\n",
+			"func sampleAction(wg *sync.WaitGroup, m *sync.Mutex) {",
+			"\tm.Lock()",
+			"\tx = x + 1",
+			"\tm.Unlock()",
+			"\twg.Done()",
+			"}\n",
+			"func callerFunc() {",
+			"\tvar w sync.WaitGroup",
+			"\tvar m sync.Mutex",
+			"\tfor i := 0; i < 10; i++ {",
+			"\t\tw.Add(1)",
+			"\t\tgo sampleAction(&w, &m)",
+			"\t}",
+			"\tw.Wait()",
+			"\tfmt.Println(\"value of x\", x)",
+			"}"
+		],
 		"description": "Mutex snippet in Golang."
 	},
 	"Go Http Server Hello World": {
@@ -401,16 +387,16 @@
 		"prefix": "go: server-hello",
 		"body": [
 			"package main\n",
-            "import (",
-            "\t\"fmt\"",
-            ")\n",
+			"import (",
+			"\t\"fmt\"",
+			")\n",
 			"func helloWorld(w http.ResponseWriter, r *http.Request){",
 			"\tfmt.Fprintf(w, \"hello\")",
 			"}\n",
 			"func main(){",
 			"http.HandleFunc(\"/hello\", helloWorld)",
 			"http.ListenAndServe(\":8090\", nil)",
-			"}",
+			"}"
 		],
 		"description": "Go Server Hello World."
 	},
@@ -419,7 +405,7 @@
 		"prefix": "go: server-set-header",
 		"body": [
 			"//w is http.ResponseWriter",
-			"w.Header().Set(\"${1:Content-Type}\",\"${2:application/json}\")",
+			"w.Header().Set(\"${1:Content-Type}\",\"${2:application/json}\")"
 		],
 		"description": "Go Server Set Header."
 	},
@@ -431,7 +417,7 @@
 			"sampleVal := r.PostFormValue(\"sampleFormField\")",
 			"if sampleVal == \"\" {",
 			"\tsampleVal = \"somethingElse\"",
-			"}",
+			"}"
 		],
 		"description": "Read value from Http Server form POST."
 	},
@@ -440,7 +426,7 @@
 		"prefix": "go: server-query-string",
 		"body": [
 			"//r is *http.Request",
-			"sampleValue := r.URL.Query().Get(\"sample\")",
+			"sampleValue := r.URL.Query().Get(\"sample\")"
 		],
 		"description": "Read query string value."
 	},
@@ -458,7 +444,7 @@
 			"\tlog.Fatalf(\"Something broke. Err: %s\", err)",
 			"}",
 			"w.Write(jsonResp)",
-			"return",
+			"return"
 		],
 		"description": "Return JSON on Http Server."
 	},
@@ -472,7 +458,7 @@
 			"\t\tlog.Fatal(err)",
 			"\t}",
 			"\tw.Header().Set(\"Content-Type\", \"image/png\")",
-			"\tw.Write(buf)",
+			"\tw.Write(buf)"
 		],
 		"description": "Go serve image with Http server."
 	},
@@ -480,7 +466,7 @@
 		"scope": "go",
 		"prefix": "go: unit-test",
 		"body": [
-			"func TestFunc(t *testing.T) {}",
+			"func TestFunc(t *testing.T) {}"
 		],
 		"description": "Go Unit Test."
 	},
@@ -500,7 +486,7 @@
 			"type ${1:Shape} interface {",
 			"\t${2:Area}() float64",
 			"\t${3:Perimeter}() float64",
-			"}",
+			"}"
 		],
 		"description": "Golang interface."
 	},
@@ -508,7 +494,7 @@
 		"scope": "go",
 		"prefix": "go: server-serve-static",
 		"body": [
-			"http.Handle(\"/\", http.FileServer(http.Dir(\"./static\")))",
+			"http.Handle(\"/\", http.FileServer(http.Dir(\"./static\")))"
 		],
 		"description": "Go serve static files with Http server."
 	},
@@ -520,7 +506,7 @@
 			"if err != nil {",
 			"\tfmt.Println(err)",
 			"\treturn",
-			"}",
+			"}"
 		],
 		"description": "Go write to file."
 	},
@@ -534,7 +520,7 @@
 			"\t}",
 			"\tdefer f.Close()",
 			"\tlog.SetOutput(f)",
-			"\tlog.Println(\"Something got logged here.\")",
+			"\tlog.Println(\"Something got logged here.\")"
 		],
 		"description": "Go write to log file."
 	},
@@ -542,7 +528,7 @@
 		"scope": "go",
 		"prefix": "go: env-get",
 		"body": [
-			"\tval := os.Getenv(${1:VariableName})",
+			"\tval := os.Getenv(${1:VariableName})"
 		],
 		"description": "Get environment variable by name."
 	},
@@ -550,7 +536,7 @@
 		"scope": "go",
 		"prefix": "go: env-set",
 		"body": [
-			"\tval := os.Setenv(${1:VariableName}, \"${2:VariableValue}\")",
+			"\tval := os.Setenv(${1:VariableName}, \"${2:VariableValue}\")"
 		],
 		"description": "Set environment variable."
 	},
@@ -563,7 +549,7 @@
 			"\t\t// Do something",
 			"\t\tnext.ServeHTTP(w, r)",
 			"\t})",
-			"}",
+			"}"
 		],
 		"description": "Http Middleware"
 	},
@@ -678,5 +664,5 @@
 			""
 		],
 		"description": "Chained Middleware Sample"
-	},
+	}
 }
