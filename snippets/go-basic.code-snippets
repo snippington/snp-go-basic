@@ -13,11 +13,33 @@
 		],
 		"description": "Hello World in Golang."
 	},
+	"Basic Go Function": {
+		"scope": "golang",
+		"prefix": "go: func",
+		"body": [
+			"func ${1:sampleFunc}(${2:a} ${3:int}) ${4:int} {",
+			"\treturn ${2}",
+			"}",
+			""
+		],
+		"description": "A simple go function."
+	},
+	"Main Function": {
+		"body": [
+			"func main() {",
+			"\tfmt.Println(\"Welcome to main() function\")",
+			"}",
+			""
+		],
+		"description": "Main function snippet.",
+		"prefix": "go: main",
+		"scope": "golang"
+	},
 	"Go Variable": {
 		"scope": "go",
 		"prefix": "go: var",
 		"body": [
-			"var $1 string = \"$2\""
+			"var ${1:x} string = \"$2\""
 		],
 		"description": "Declare a variable in Golang."
 	},
@@ -165,7 +187,7 @@
 		"scope": "go",
 		"prefix": "go: struct-method",
 		"body": [
-			"func (s ${1:SampleStruct}) ${2:SampleMethod() string {",
+			"func (s ${1:SampleStruct}) ${2:SampleMethod}() string {",
 			"\treturn fmt.Sprintf(\"Sample val was %s\", s.SampleProperty)",
 			"}"
 		],
