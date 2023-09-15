@@ -11,6 +11,7 @@ This VSCode extension is a curation of useful Golang snippets.
 | ------ | ------------ |
 | `go: hello` | Go Hello World app |
 | `go: func` | A simple function |
+| `go: func-public` | A simple public function |
 | `go: class` | Public Class |
 | `go: prop` | Property |
 | `go: var` | Variable |
