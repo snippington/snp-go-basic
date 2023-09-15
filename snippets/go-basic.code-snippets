@@ -500,10 +500,10 @@
 		"prefix": "go: unit-test",
 		"body": [
 			"// Make sure to import testing",
-			"//*import (",
+			"//import (",
 			"//\t\"fmt\"",
 			"//\t\"testing\"",
-			")*/",
+			"//)",
 			"",
 			"func Test${1:Func}(t *testing.T){",
 			"\tvar x int = 1",
