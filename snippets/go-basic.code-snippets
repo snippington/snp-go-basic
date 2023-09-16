@@ -499,7 +499,7 @@
 		"scope": "go",
 		"prefix": "go: unit-test",
 		"body": [
-			"// Make sure to import testing",
+			"// package main",
 			"//import (",
 			"//\t\"testing\"",
 			"//)",
@@ -508,7 +508,7 @@
 			"\tvar x int = 2",
 			"\tvar y int = 2",
 			"\tif x!=y {",
-			"\t\tt.Errorf(\"Expected %d, got %d, x, x\")",
+			"\t\tt.Errorf(\"Expected %d, got %d,\",x, y)",
 			"\t}",
 			"}",
 			""
