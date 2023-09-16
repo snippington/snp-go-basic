@@ -10,10 +10,14 @@ This VSCode extension is a curation of useful Golang snippets.
 | Prefix | Description |
 | ------ | ------------ |
 | `go: hello` | Go Hello World app |
+| `go: pkg` | Set a Go package name |
+| `go: fn` | A simple function |
 | `go: func` | A simple function |
 | `go: func-public` | A simple public function |
 | `go: class` | Public Class |
 | `go: prop` | Property |
+| `go: print` | Print to console |
+| `go: main` | Main Function |
 | `go: var` | Variable |
 | `go: short-var` | Short variable |
 | `go: const` | Constant |

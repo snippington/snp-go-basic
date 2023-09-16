@@ -13,6 +13,24 @@
 		],
 		"description": "Hello World in Golang."
 	},
+	"Package": {
+		"scope": "golang",
+		"prefix": "go: pkg",
+		"body": [
+			"package ${1:main}"
+		],
+		"description": "Declare a Go package."
+	},
+	"Go Function": {
+		"scope": "golang",
+		"prefix": "go: fn",
+		"body": [
+			"func ${1:sampleFunc}(${2:a} ${3:int}) ${4:int} {",
+			"\treturn ${2}",
+			"}"
+		],
+		"description": "A simple go function."
+	},
 	"Basic Go Function": {
 		"scope": "golang",
 		"prefix": "go: func",
@@ -30,10 +48,17 @@
 		"body": [
 			"func ${1:SampleFunc}(${2:a} ${3:int}) ${4:int} {",
 			"\treturn ${2}",
-			"}",
-			""
+			"}"
 		],
 		"description": "A simple public go function."
+	},
+	"Print": {
+		"scope": "golang",
+		"prefix": "go: print",
+		"body": [
+			"fmt.Println(\"${1:SomeText}\")"
+		],
+		"description": "Print on console."
 	},
 	"Main Function": {
 		"body": [
