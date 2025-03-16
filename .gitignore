@@ -108,3 +108,6 @@ package.sh
 
 # Packaged snippet
 snp-go-basic-*
+
+PUSHER.md
+.DS_Store

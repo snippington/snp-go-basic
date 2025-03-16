@@ -3,7 +3,7 @@
   "displayName": "Golang Basic Snippets",
   "description": "Basic snippets for development in Go (based on gobyexample.com).",
   "icon": "images/snp_go_basic.png",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "engines": {
     "vscode": "^1.71.0"
   },

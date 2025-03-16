@@ -14,7 +14,7 @@
 		"description": "Hello World in Golang."
 	},
 	"Package": {
-		"scope": "golang",
+		"scope": "go",
 		"prefix": "go: pkg",
 		"body": [
 			"package ${1:main}"
@@ -22,7 +22,7 @@
 		"description": "Declare a Go package."
 	},
 	"Go Function": {
-		"scope": "golang",
+		"scope": "go",
 		"prefix": "go: fn",
 		"body": [
 			"func ${1:sampleFunc}(${2:a} ${3:int}) ${4:int} {",
@@ -32,7 +32,7 @@
 		"description": "A simple go function."
 	},
 	"Basic Go Function": {
-		"scope": "golang",
+		"scope": "go",
 		"prefix": "go: func",
 		"body": [
 			"func ${1:sampleFunc}(${2:a} ${3:int}) ${4:int} {",
@@ -43,7 +43,7 @@
 		"description": "A simple go function."
 	},
 	"Basic Go Function Public": {
-		"scope": "golang",
+		"scope": "go",
 		"prefix": "go: func-public",
 		"body": [
 			"func ${1:SampleFunc}(${2:a} ${3:int}) ${4:int} {",
@@ -53,7 +53,7 @@
 		"description": "A simple public go function."
 	},
 	"Print": {
-		"scope": "golang",
+		"scope": "go",
 		"prefix": "go: print",
 		"body": [
 			"fmt.Println(\"${1:SomeText}\")"
@@ -69,7 +69,7 @@
 		],
 		"description": "Main function snippet.",
 		"prefix": "go: main",
-		"scope": "golang"
+		"scope": "go"
 	},
 	"Go Variable": {
 		"scope": "go",
@@ -175,7 +175,7 @@
 			"\tcalledFunc(&$1)",
 			"}\n",
 			"func calledFunc(iptr *${3:int}){",
-			"\t\/\/Pointer dereferenced and value assigned below.",
+			"\t//Pointer dereferenced and value assigned below.",
 			"\t*iptr = ${4:0}",
 			"}"
 		],
@@ -194,7 +194,7 @@
 			"\tfmt.Println(\"Details: \",s.name)",
 			"}"
 		],
-		"description": "Buffered Channels in Golang."
+		"description": "Struct in Golang."
 	},
 	"Go Struct Embedded": {
 		"scope": "go",
@@ -248,7 +248,7 @@
 			"\tfmt.Println(msg)",
 			"}(\"sample msg\")"
 		],
-		"description": "Go routine with anonymouse func in Golang."
+		"description": "Go routine with anonymous func in Golang."
 	},
 	"Go Routine": {
 		"scope": "go",
@@ -261,19 +261,19 @@
 			"\tgo sampleFunc(\"sample msg\")",
 			"}"
 		],
-		"description": "Go routine with anonymouse func in Golang."
+		"description": "Go routine with func in Golang."
 	},
 	"Go Channel": {
 		"scope": "go",
 		"prefix": "go: channel",
 		"body": [
-			"\/\/Creating a channel.",
+			"//Creating a channel.",
 			"ch := make(chan string)\n",
-			"\/\/Blocking send to channel.",
+			"//Blocking send to channel.",
 			"go func() { ",
 			"\tch <- \"ping\" ",
 			"}()\n",
-			"\/\/Blocking read from channel.",
+			"//Blocking read from channel.",
 			"msg := <-ch",
 			"fmt.Println(msg)",
 			""
@@ -284,14 +284,14 @@
 		"scope": "go",
 		"prefix": "go: channel-buffered",
 		"body": [
-			"\n\/\/Buffered channels accept limited no.",
-			"\/\/of values without concurrent receiver.\n",
-			"\/\/Creating buffered Channel.",
+			"\n//Buffered channels accept limited no.",
+			"//of values without concurrent receiver.\n",
+			"//Creating buffered Channel.",
 			"ch := make(chan string, 2)\n",
-			"\/\/Sending to Channel.",
+			"//Sending to Channel.",
 			"ch <- \"buffered\"",
 			"ch <- \"channel\"\n",
-			"\/\/Values received later.",
+			"//Values received later.",
 			"fmt.Println(<-ch)",
 			"fmt.Println(<-ch)"
 		],
@@ -341,9 +341,9 @@
 		"prefix": "go: worker-pools",
 		"body": [
 			"func worker(id int, jobs <-chan int, results chan<- int) {",
-			"\t\/\/Run concurrent worker instances.",
-			"\t\/\/Receive work on the jobs channel.",
-			"\t\/\/Send corresponding results to resulting channel.",
+			"\t//Run concurrent worker instances.",
+			"\t//Receive work on the jobs channel.",
+			"\t//Send corresponding results to resulting channel.",
 			"\tfor j := range jobs {",
 			"\t\tfmt.Println(\"worker\", id, \"started  job\", j)",
 			"\t\ttime.Sleep(time.Second)",
@@ -353,19 +353,19 @@
 			"}\n",
 			"func callerFunc(){",
 			"\tconst numJobs = 5\n",
-			"\t\/\/Create channel to create jobs and track results.",
+			"\t//Create channel to create jobs and track results.",
 			"\tjobs := make(chan int, numJobs)",
 			"\tresults := make(chan int, numJobs)\n",
-			"\t\/\/Initiate workers.",
+			"\t//Initiate workers.",
 			"\tfor w := 1; w <= 3; w++ {",
 			"\t\tgo worker(w, jobs, results)",
 			"\t}\n",
-			"\t\/\/Send jobs to the channel.",
+			"\t//Send jobs to the channel.",
 			"\tfor j := 1; j <= numJobs; j++ {",
 			"\t\tjobs <- j",
 			"\t}",
 			"\tclose(jobs)\n",
-			"\t\/\/Collect results from jobs.",
+			"\t//Collect results from jobs.",
 			"\tfor a := 1; a <= numJobs; a++ {",
 			"\t\t<-results",
 			"\t}",
@@ -379,7 +379,7 @@
 		"body": [
 			"var ${1:wg} sync.WaitGroup"
 		],
-		"description": ""
+		"description": "WaitGroup declaration in Golang."
 	},
 	"Go WaitGroup Snippet": {
 		"scope": "go",
@@ -391,27 +391,27 @@
 			"\tfmt.Printf(\"Worker %d done\", id)",
 			"}\n",
 			"func callerFunc (){",
-			"\t\/\/Create WaitGroup to wait on",
-			"\t\/\/all goroutines to finish.",
+			"\t//Create WaitGroup to wait on",
+			"\t//all goroutines to finish.",
 			"\tvar wg sync.WaitGroup\n",
-			"\t\/\/Increment WaitGroup and",
-			"\t\/\/create multiple gorountines.",
+			"\t//Increment WaitGroup and",
+			"\t//create multiple gorountines.",
 			"\tfor i := 1; i <= 5; i++ {",
 			"\t\twg.Add(1)",
 			"\t\ti := i",
-			"\t\t\/\/Wrap the worker call in a closure that",
-			"\t\t\/\/makes sure to tell the WaitGroup",
-			"\t\t\/\/that this worker is done.",
+			"\t\t//Wrap the worker call in a closure that",
+			"\t\t//makes sure to tell the WaitGroup",
+			"\t\t//that this worker is done.",
 			"\t\tgo func() {",
 			"\t\t\tdefer wg.Done()",
 			"\t\t\tworker(i)",
 			"\t\t}()",
 			"\t}",
-			"\t\/\/Block until the WaitGroup",
-			"\t\/\/counter goes back to 0.",
+			"\t//Block until the WaitGroup",
+			"\t//counter goes back to 0.",
 			"\twg.Wait()",
-			"\t\/\/Note: Order of workers starting up and",
-			"\t\/\/finishing is likely to be different.",
+			"\t//Note: Order of workers starting up and",
+			"\t//finishing is likely to be different.",
 			"}"
 		],
 		"description": "WaitGroup in Golang."
@@ -447,13 +447,14 @@
 			"package main\n",
 			"import (",
 			"\t\"fmt\"",
+			"\t\"net/http\"",
 			")\n",
 			"func helloWorld(w http.ResponseWriter, r *http.Request){",
 			"\tfmt.Fprintf(w, \"hello\")",
 			"}\n",
 			"func main(){",
-			"http.HandleFunc(\"/hello\", helloWorld)",
-			"http.ListenAndServe(\":8090\", nil)",
+			"\thttp.HandleFunc(\"/hello\", helloWorld)",
+			"\thttp.ListenAndServe(\":8090\", nil)",
 			"}"
 		],
 		"description": "Go Server Hello World."
@@ -584,7 +585,7 @@
 		"scope": "go",
 		"prefix": "go: write-to-log",
 		"body": [
-			"\tf, err := os.OpenFile(\"${:sampleLogFile}\", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)",
+			"\tf, err := os.OpenFile(\"${1:sampleLogFile}\", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)",
 			"\tif err != nil {",
 			"\t\tlog.Fatalf(\"File open error: %v\", err)",
 			"\t}",
@@ -598,7 +599,7 @@
 		"scope": "go",
 		"prefix": "go: env-get",
 		"body": [
-			"\tval := os.Getenv(${1:VariableName})"
+			"\tval := os.Getenv(\"${1:VariableName}\")"
 		],
 		"description": "Get environment variable by name."
 	},
@@ -606,7 +607,7 @@
 		"scope": "go",
 		"prefix": "go: env-set",
 		"body": [
-			"\tval := os.Setenv(${1:VariableName}, \"${2:VariableValue}\")"
+			"\tos.Setenv(\"${1:VariableName}\", \"${2:VariableValue}\")"
 		],
 		"description": "Set environment variable."
 	},
@@ -630,7 +631,7 @@
 			"//http.HandleFunc(\"/upload\", fileUploadHandler)",
 			"func fileUploadHandler(w http.ResponseWriter, r *http.Request) {",
 			"\t// Maximum upload of 10 MB files",
-			"\tr.ParseMultipartForm(10 \u003c\u003c 20)",
+			"\tr.ParseMultipartForm(10 << 20)",
 			"",
 			"\t// Get handler for filename, size and headers",
 			"\tfile, handler, err := r.FormFile(\"${2:formKey}\")",
