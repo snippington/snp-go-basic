@@ -233,9 +233,11 @@
 		"scope": "go",
 		"prefix": "go: error",
 		"body": [
+			"import (\n\t\"errors\"\n)",
 			"var someCondition bool = false",
-			"if (someCondition){",
-			"\terrors.New(\"Something broke.\")",
+			"if someCondition {",
+			"\terr := errors.New(\"Something broke.\")",
+			"\tfmt.Println(err)",
 			"}"
 		],
 		"description": "Error in Golang."
@@ -511,8 +513,7 @@
 		"scope": "go",
 		"prefix": "go: server-serve-image",
 		"body": [
-			"\tbuf, err := ioutil.ReadFile(\"sid.png\")",
-			"",
+			"\tbuf, err := os.ReadFile(\"sid.png\")",
 			"\tif err != nil {",
 			"\t\tlog.Fatal(err)",
 			"\t}",
@@ -525,19 +526,18 @@
 		"scope": "go",
 		"prefix": "go: unit-test",
 		"body": [
-			"// package main",
-			"//import (",
-			"//\t\"testing\"",
-			"//)",
+			"package main",
+			"import (",
+			"\t\"testing\"",
+			")",
 			"",
-			"func Test${1:Func}(t *testing.T){",
+			"func Test${1:Func}(t *testing.T) {",
 			"\tvar x int = 2",
 			"\tvar y int = 2",
-			"\tif x!=y {",
-			"\t\tt.Errorf(\"Expected %d, got %d,\",x, y)",
+			"\tif x != y {",
+			"\t\tt.Errorf(\"Expected %d, got %d\", x, y)",
 			"\t}",
-			"}",
-			""
+			"}"
 		],
 		"description": "Go Unit Test."
 	},
@@ -573,7 +573,7 @@
 		"scope": "go",
 		"prefix": "go: file-write",
 		"body": [
-			"err = ioutil.WriteFile(\"${1:sampleFile.txt}\", ${2:sampleContent}, 0644)",
+			"err := os.WriteFile(\"${1:sampleFile.txt}\", []byte(${2:sampleContent}), 0644)",
 			"if err != nil {",
 			"\tfmt.Println(err)",
 			"\treturn",
@@ -607,7 +607,7 @@
 		"scope": "go",
 		"prefix": "go: env-set",
 		"body": [
-			"\tos.Setenv(\"${1:VariableName}\", \"${2:VariableValue}\")"
+			"os.Setenv(\"${1:VariableName}\", \"${2:VariableValue}\")"
 		],
 		"description": "Set environment variable."
 	},
